@@ -1,23 +1,45 @@
 .FooterDiv{
 	width: 100%;
 	height: 40px;
-	font-size:20px;
+	font-size:12px;
 	position: fixed;
 	bottom: 0px;
 	left: 0px;
 	border-top: 1px solid #999;
 
 	ul{
+		height: 40px;
 		width: 100%;
 		list-style: none;
+		display: flex;
 		li{
-			float: left;
-			width: 20%;
-			line-height: 40px;
+			height: 100%;
+			flex: 1;
+			
+			
 			text-align: center;
 			color:#999;
+			display:flex;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+
+			img{
+				display: block;
+				width:35%;
+				
+				
+			}
+			a{
+				display: block;
+				height:50%;
+				width: 100%;
+				text-decoration: none;
+				color: #B3B3B3
+			}
 			.active{
-				color:#000;
+				color:#666;
 			}
 		}
 	}

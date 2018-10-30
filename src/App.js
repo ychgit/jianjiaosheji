@@ -9,7 +9,7 @@ class App extends Component {
       <div className="AppDiv">
         <Header/>
 
-        我是根组件app
+        
         
         {
           //属性有一个特殊的children
