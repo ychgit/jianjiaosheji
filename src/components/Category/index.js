@@ -1,10 +1,19 @@
 import React,{Component} from "react";
+import {connect} from "react-redux"
+import action from "./action";
 class Category extends Component{
 	render(){
 		return <div>
-			Category测试
+			Category
 
 		</div>
 	}
+	componentDidMount(){
+		this.props.changeHeaderTitle("分类")
+	}
 }
-export default Category;
+export default connect(
+	null,
+	action
+	)(Category);
+

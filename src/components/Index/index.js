@@ -1,5 +1,7 @@
 import React,{Component} from "react";
 import axios from "axios";
+import {connect} from "react-redux"
+import action from "./action";
 class Index extends Component{
 	render(){
 		return <div>
@@ -8,9 +10,10 @@ class Index extends Component{
 		</div>
 	}
 	componentDidMount(){
-		axios.get("/v2/page?pageId=1&tabId=1&_=1540859487948").then(res=>{
-			console.log(res);
-		})
+		this.props.changeHeaderTitle("首页")
 	}
 }
-export default Index;
+export default connect(
+	null,
+	action
+	)(Index);

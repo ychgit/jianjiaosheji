@@ -7,11 +7,12 @@ import Inspiration from "../components/Inspiration"
 import Brand from "../components/Brand"
 import User from "../components/User"
 import Register from "../components/Register"
-// import {Provider} from "react-redux";
-// import store from "../store";
+import Search from "../components/Search"
+import {Provider} from "react-redux";
+import store from "../store";
 
 const router = (
-	
+	<Provider store={store}>
 		<Router>
 			<App>
 				<Switch>
@@ -23,12 +24,13 @@ const router = (
 					}/>
 					<Route path="/user" component={User}/>
 					<Route path="/register" component={Register}/>
+					<Route path="/search" component={Search}/>
 					
 					<Redirect from="*" to="/index"/>
 				</Switch>
 			</App>
 		</Router>
-
+	</Provider>
 
 
 
