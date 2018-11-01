@@ -12,5 +12,13 @@ class Search extends Component{
 	loadind(){
 		this.props.history.push("/index")
 	}
+	componentDidMount(){
+		var self = document.querySelector(".FooterDiv");
+		// 拿到父节点:
+		var parent = self.parentElement;
+		// 删除:
+		var removed = parent.removeChild(self);
+	
+	}
 }
 export default Search

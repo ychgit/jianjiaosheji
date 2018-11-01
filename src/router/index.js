@@ -8,6 +8,7 @@ import Brand from "../components/Brand"
 import User from "../components/User"
 import Register from "../components/Register"
 import Search from "../components/Search"
+import Items from "../components/Items"
 import {Provider} from "react-redux";
 import store from "../store";
 
@@ -25,6 +26,7 @@ const router = (
 					<Route path="/user" component={User}/>
 					<Route path="/register" component={Register}/>
 					<Route path="/search" component={Search}/>
+					<Route path="/items" component={Items}/>
 					
 					<Redirect from="*" to="/index"/>
 				</Switch>

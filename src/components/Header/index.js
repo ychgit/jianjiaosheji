@@ -4,7 +4,7 @@ import {connect} from "react-redux";//
 class Header extends Component{
 	render(){
 		return <div className="HeaderDiv">
-			<p></p><div>{this.props.title}</div><img src="/search.png" alt="" onClick={this.loadserch.bind(this)}/>
+			<p><img src="/home.png" alt="" onClick={this.loadind.bind(this)}/></p><div>{this.props.title}</div><img src="/search.png" alt="" onClick={this.loadserch.bind(this)}/>
 
 		</div>
 	}
@@ -12,6 +12,9 @@ class Header extends Component{
 
 		window.location.href="/search"
 		
+	}
+	loadind(){
+		window.location.href="/index"
 	}
 }
 export default connect(
