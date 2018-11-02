@@ -1,0 +1,102 @@
+.PinleiDetailDiv{
+	margin-bottom: 50px;
+	position: relative;
+	.swiper-container {
+	    width: 100%;
+	    height: 100%;	    
+	    background: url(https://img.wowdsgn.com/category/background/10.jpg?imageslim) no-repeat left center;
+	    background-size: 500px;
+	    .swiper-wrapper{
+			width: 100%;
+			height: 100%;
+			padding-top:20px;
+			padding-bottom:20px;  
+	    	.swiper-slide {
+			height: 80px;
+			text-align: center;
+			font-size: 18px;
+			background: rgba(255,255,255,0);
+			border:1px solid #ccc;
+			color:#fff;
+			font-size:16px;
+			font-weight: bold;
+			/* Center slide text vertically */
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			align-items: center;
+		}
+	    }
+	    
+	}
+	
+	p{
+		width: 100%;
+		text-align:center;
+		color: #999;
+	}
+	.ul{
+		display: flex;
+    	flex-flow: wrap;
+    	ul{
+    		width: 100%;
+    		display: flex;
+    		border-bottom:1px solid #ddd;
+    		li{
+    			flex:1;
+    			display: flex;
+    			justify-content: center;
+    			.btn{
+    				width: 50%;
+		    		height: 40px;
+		    		margin: 10px;
+		    		text-align:center;
+		    		line-height: 40px;
+    			}
+    			.bder{
+    				border-bottom:3px solid #000;
+    			}
+    		}
+    		
+    	}
+    	
+    	.li{
+    		float: left;
+    		width: 49.8%;
+    		a{
+    			display: block;
+    			width: 100%;
+    			img{
+    				padding: 10px;
+    				width: 90%;
+    			}
+    			.text{
+    				padding: 10px;
+    				p{
+	    				width: 100%;
+	    				overflow: hidden;
+	   					text-overflow: ellipsis;
+	    				white-space: nowrap;
+	    				position: relative;
+
+	    			}
+	    			span:nth-of-type(1){
+	    				color: #000;
+	    			}
+	    			span:nth-of-type(2){
+	    				text-decoration: line-through;
+	    			}
+    			}
+    			
+    		}
+    	}
+	}
+}
