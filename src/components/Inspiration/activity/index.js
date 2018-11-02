@@ -38,7 +38,7 @@ class Activity extends Component{
 			this.state.lunbolist?<ReactSwipe className="carousel" swipeOptions={{continuous: true,auto: 2000}}>
 						{
 							this.state.lunbolist.map(val=>
-								<div className="lunbo">
+								<div className="lunbo" key={val.id}>
 									<img src={val.bannerImgSrc}/>
 								</div>
 								)
@@ -67,7 +67,7 @@ class Activity extends Component{
 			<div className="complex">
 			{
 				this.state.complexList.map(val=>
-					<div className="li" onClick={this.handleClick.bind(this,val.productId,val.parentProductId)}>
+					<div className="li" key={val.productId} onClick={this.handleClick.bind(this,val.productId,val.parentProductId)}>
 					<img src={val.productImg}/>
 					<div>
 						<p>{val.productName}</p>
