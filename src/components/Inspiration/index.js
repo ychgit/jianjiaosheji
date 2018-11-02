@@ -3,6 +3,10 @@ import Decorate from "./decorate";
 import Activity from "./activity";
 import "./index.scss";
 
+
+import {connect} from "react-redux"
+import action from "./action";
+
 class Inspiration extends Component{
 	constructor(props){
 		super(props);
@@ -12,7 +16,8 @@ class Inspiration extends Component{
 		}
 	}
 	render(){
-		return <div>
+		return <div id="decorate">
+
 			
 			<ul>
 				<li className={this.state.isShow?"change":""} onClick={this.decorateClick.bind(this)}>家居</li>
@@ -22,6 +27,9 @@ class Inspiration extends Component{
 			<div className={this.state.isShow?"":"hide"}>
 				<Decorate {...this.props}/>
 			</div>
+
+			
+
 
 			<div  className={this.state.changeShow?"":"hide"}>
 				<Activity {...this.props}/>
@@ -40,6 +48,14 @@ class Inspiration extends Component{
 			changeShow:true
 		})
 	}
+	componentDidMount(){
+		this.props.changeHeaderTitle("灵感")
+	}
 }
-export default Inspiration;
+export default connect(
+	null,
+	action
+	)(Inspiration);
+
+
 

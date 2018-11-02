@@ -32,7 +32,7 @@ class Activity extends Component{
 		
 	}
 	render(){
-		return <div>
+		return <div >
 		
 		{
 			this.state.lunbolist?<ReactSwipe className="carousel" swipeOptions={{continuous: true,auto: 2000}}>

@@ -1,12 +1,28 @@
 .HeaderDiv{
 	width: 100%;
 	height: 40px;
-	font-size:20px;
-	position: fixed;
+	
+	position: relative;
 	top: 0px;
 	left: 0px;
 	font-weight: bolder;
 	line-height: 40px;
 	text-align:center;
-	background:#999;
+	background:#fff;
+	display: flex;
+	align-items: center;
+	img{
+		width: 30px;
+		height: 30px;
+	}
+	div{
+		flex: 1
+	}
+	p{
+		width: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+	}
 }

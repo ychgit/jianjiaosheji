@@ -1,11 +1,13 @@
-ul{
-	height: 40px;
-	display:flex; 
-	line-height: 40px;
+#decorate{
+	ul{
+		height: 40px;
+		display:flex; 
+		line-height: 40px;
 
-	li{
-		flex: 1;
-		text-align: center;
+		li{
+			flex: 1;
+			text-align: center;
+		}
 	}
 }
 .change{

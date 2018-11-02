@@ -16,20 +16,32 @@ class User extends Component{
 					<li className={this.state.subshow?'':"change"} onClick={this.handlesub.bind(this)}>密码登录</li>
 					<li className={this.state.messhoe?'':"change"} onClick={this.handlemes.bind(this)}>短信登录</li>
 				</ul>
-				<div className={this.state.subshow?'':"hide"}>
-					<div><input type="text" placeholder="请输入手机号"/></div>
-					<div><input type="text" placeholder="请输入验证码"/><button>获取验证码</button></div>
-				</div>
-				<div className={this.state.messhoe?'':"hide"}>
-					<div><input type="text" placeholder="请输入手机号"/></div>
-					<div><input type="text" placeholder="请输入密码"/><button>忘记密码?</button></div>
 
-				</div>
+				{this.state.subshow?<div>
+					<div><input type="text" placeholder="请输入手机号" ref="phonenum" /></div>
+					<div><input type="text" placeholder="请输入验证码"/><button onClick={this.sendnum.bind(this)}>获取验证码</button></div>
+				</div>:null}
+
+				{this.state.messhoe?<div>
+					<div><input type="text" placeholder="请输入手机号" ref="phonenum"/></div>
+					<div><input type="text" placeholder="请输入密码"/><button>忘记密码?</button></div>
+				
+				</div>:null}
+				{/*<div className={this.state.subshow?'':"hide"}>
+									<div><input type="text" placeholder="请输入手机号" ref="phonenum" /></div>
+									<div><input type="text" placeholder="请输入验证码"/><button onClick={this.sendnum.bind(this)}>获取验证码</button></div>
+								</div>
+								<div className={this.state.messhoe?'':"hide"}>
+									<div><input type="text" placeholder="请输入手机号"/></div>
+									<div><input type="text" placeholder="请输入密码"/><button>忘记密码?</button></div>
+				
+								</div>*/}
 				
 			</div>
 			<div className="sub">
-				<button>确认</button>
+				<button onClick={this.touchblur.bind(this)}>确认</button>
 			</div>
+			<p onClick={this.loadreg.bind(this)}>快速注册</p>
 
 		</div>
 	}
@@ -56,6 +68,24 @@ class User extends Component{
 	}
 	loadreg(){
 		this.props.history.push("/register")
+	}
+	sendnum(){
+		alert("验证码已发送")
+	}
+	touchblur(){
+		var regex = /^((\+)?86|((\+)?86)?)0?1[3458]\d{9}$/; 
+
+		if (this.refs.phonenum.value) {
+
+	        if (regex.test(this.refs.phonenum.value)) { 
+	        	alert("请输正确的验证码！")
+	        } else { 
+	          alert('请输入人类的手机号码！');
+	        }
+	    } else {
+
+	        alert('请输入手机号码')
+	    }
 	}
 }
 export default User;
