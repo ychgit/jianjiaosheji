@@ -72,7 +72,7 @@ class Jiaju extends Component{
 		})
 	}
 	componentDidUpdate(){
-		var swiper1 = new Swiper('.swiper-container', {
+		var swiper = new Swiper('.swiper-container', {
       spaceBetween: 30,
       centeredSlides: true,
       autoplay: {
