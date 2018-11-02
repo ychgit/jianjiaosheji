@@ -26,7 +26,7 @@ const router = (
 					<Route path="/user" component={User}/>
 					<Route path="/register" component={Register}/>
 					<Route path="/search" component={Search}/>
-					<Route path="/items" component={Items}/>
+					<Route path="/items/:productId/:parentProductId" component={Items}/>
 					
 					<Redirect from="*" to="/index"/>
 				</Switch>

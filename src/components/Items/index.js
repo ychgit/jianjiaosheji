@@ -13,19 +13,20 @@ class Items extends Component {
 	}
 	render(){
 		return <div id="item">
+
 			{this.state.attrlist&&this.state.detilist? 
 				<div>
 				<ul>
 					{
-						this.state.detilist.map((item,index)=>
-							<li key={index}><img src={item.content} alt=""/></li>
+						this.state.attrlist.map((item,index)=>
+							<li key={index}>{item.attributeName}{item.attributeValueText}</li>
 							)
 					}
 				</ul>
 				<ul>
 					{
-						this.state.attrlist.map((item,index)=>
-							<li key={index}>{item.attributeName}   {item.attributeValueText}</li>
+						this.state.detilist.map((item,index)=>
+							<li key={index}><img src={item.content} alt=""/></li>
 						)
 					}
 				</ul>
@@ -35,21 +36,25 @@ class Items extends Component {
 	}
 	componentDidMount(){
 		this.props.changeHeaderTitle("商品详情")
-		axios.get("/itemdetail/skuInfos/16388?_=1541037972963").then((res)=>{
+		axios.get(`/itemdetail/skuInfos/${this.props.match.params.productId}?_=1541037972963`).then((res)=>{
 			console.log(res.data)
 			this.setState({
 				attrlist:res.data.data.skuAttrPairs
 			})
-			
 		})
-		axios.get("/itemdetail/spuInfos/10471?_=1541037972966").then((res)=>{
+			axios.get(`/itemdetail/spuInfos/${this.props.match.params.parentProductId}?_=1541140501634`).then((res)=>{
 			console.log(res.data)
 			this.setState({
 				detilist:res.data.data.itemDetailIntroVoList
-			})
-			
-		})
+				
 
+			})
+			console.log(res.data.data.itemDetailIntroVoList)
+			
+		
+		})
+		
+	
 	}
 }
 
