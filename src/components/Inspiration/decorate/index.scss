@@ -1,0 +1,202 @@
+div{
+	
+.innovate{
+	background: #fff;	
+	}
+	.innovatebox{
+		margin-top:15px;
+		h3{
+      font-size: 18px;
+			text-align:center;
+			display:block;
+			height:40px;
+			line-height:40px;
+      padding-top: 10px;
+		}
+		h4{
+			text-align:center;
+			display:block;
+			font-size:14px;
+			height:40px;
+			line-height:40px;
+			color:#808080;
+		}
+	}
+}
+
+a{
+	text-decoration: none;
+}	
+html, body {
+     position: relative;
+     height: 100%;
+   }
+   body {
+     background: #eee;
+     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+     font-size: 14px;
+     color:#000;
+     margin: 0;
+     padding: 0;
+   }
+   .swiper-container {   	  
+     width: 100%;
+     height: 100%;
+     
+
+   }
+   .swiper-slide {
+   	
+     text-align: center;
+     font-size: 10px;
+     background: #fff;
+
+     /* Center slide text vertically */
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: -webkit-flex;
+     display: flex;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     -webkit-justify-content: center;
+     justify-content: center;
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     -webkit-align-items: center;
+     align-items: center;
+     width: 60%;
+
+   }
+
+ 	.swiper-slide:nth-child(n) {
+/* 		background: yellow;
+*/        width: 90px;
+		  
+
+     }  
+/*   .swiper-slide:nth-child(2n) {
+   		background: red;
+         width: 50%;
+       }
+       .swiper-slide:nth-child(3n) {
+       	background: blue;
+         width: 50%;
+       }*/
+       .cximg{
+       	display: block;
+       	width: 90px;
+       	height: 90px;
+       }
+      .cxspan{
+      	color: black;
+      }
+       .cxa{
+		display: inline-block;
+		text-decoration: none;
+		p{
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			width: 90px;			
+			color : #808080;
+		}
+		
+       }
+.cxfooter{
+	text-align: center;
+	height: 48px;
+	line-height: 48px;
+	a{
+		color: black;
+		font-size: 12px;
+	}
+}
+.banner3{
+  img{
+    width: 100%;
+  }
+}
+.headset{
+  overflow: hidden;
+    
+  .xiangqing{
+    float: left;
+    width: 32%;
+    background: white;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    a{
+      color: black;
+      img{
+        width: 100%;
+      }
+      p{
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        margin-left: 3px;
+      }
+      span{
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+}
+.fenleiImg{
+  display: flex;
+  flex-flow: (row initial);
+  margin:10px;
+  div{
+    flex-grow: 1; 
+    float: left;
+    flex-basis:0;
+    margin-right: 10px;
+    a{
+      img{
+        width: 100%;
+      }
+    }
+      
+      
+  }
+  
+}
+/*     .swiper-slide{
+     	background: red;
+     	.cximg{
+     		width: 100px;
+     	}
+     }*/
+     
+.tableware_box{
+      border-top: 1px solid #F5F5F5;
+      overflow: hidden;
+      height: 880px;
+      .li{
+        background: white;
+        float: left;
+        width: 49.7%;
+        border-bottom: 1px solid #F5F5F5;
+        border-right: 1px solid #F5F5F5;
+        img{
+          width: 100%;
+        }
+
+        div{
+
+          padding: 0 10px;
+          margin: 30px 0;
+          p{
+            color: #808080;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+          span{
+            font-size: 17px;
+          }
+        }
+      }
+
+     }
