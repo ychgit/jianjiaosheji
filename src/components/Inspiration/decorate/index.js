@@ -65,8 +65,8 @@ class Decorate extends Component{
 
 			    {
 			    	this.state.innovatelist.map(val=>
-			    		<div className="swiper-slide">
-			    		<a href="#" className="cxa" key={val.id} >
+			    		<div className="swiper-slide" key={val.parentProductId}>
+			    		<a href="#" className="cxa"  >
 			    		<img className="cximg" src={val.productImg} />
 			    		<p>{val.productName}</p>
 			    		<span className="cxspan">￥{val.originalPrice}</span>
@@ -94,9 +94,9 @@ class Decorate extends Component{
 					<div className="headset">
 					{
 						this.state.branderjilist.map(val=>
-					<div className="xiangqing" onClick={this.handleClick.bind(this,val.productId,val.parentProductId)}>
+					<div className="xiangqing" key={val.productId} onClick={this.handleClick.bind(this,val.productId,val.parentProductId)}>
 					<a href="#">
-					<img src={val.productImg} key={val.productId}/>
+					<img src={val.productImg} />
 					<p>{val.productName}</p>
 					<span>￥{val.originalPrice}</span>
 					</a>
@@ -112,7 +112,7 @@ class Decorate extends Component{
 					<div className="fenleiImg">
 						{
 							this.state.fenleiList.map(val=>
-								<div>
+								<div  key={val.id}>
 								<a href="#">
 								<img src={val.bannerImgSrc}/>
 								</a>
@@ -129,7 +129,7 @@ class Decorate extends Component{
 			<div className="tableware_box">
 			{
 				this.state.tablewareList.map(val=>
-					<div className="li" onClick={this.handleClick.bind(this,val.productId,val.parentProductId)}>
+					<div className="li" key={val.productId} onClick={this.handleClick.bind(this,val.productId,val.parentProductId)}>
 					<img src={val.productImg}/>
 					<div>
 						<p>{val.productName}</p>
@@ -147,7 +147,7 @@ class Decorate extends Component{
 				<div className="tableware_box">
 				{
 					this.state.vaseList.map(val=>
-						<div className="li" onClick={this.handleClick.bind(this,val.productId,val.parentProductId)}>
+						<div className="li" key={val.productId} onClick={this.handleClick.bind(this,val.productId,val.parentProductId)}>
 						<img src={val.productImg}/>
 						<div>
 							<p>{val.productName}</p>
@@ -166,7 +166,7 @@ class Decorate extends Component{
 				<div className="tableware_box">
 				{
 					this.state.baoList.map(val=>
-						<div className="li" onClick={this.handleClick.bind(this,val.productId,val.parentProductId)}>
+						<div className="li" key={val.productId} onClick={this.handleClick.bind(this,val.productId,val.parentProductId)}>
 						<img src={val.productImg}/>
 						<div>
 							<p>{val.productName}</p>
