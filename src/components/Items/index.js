@@ -34,7 +34,7 @@ class Items extends Component {
 					<ul className="half">
 						{
 							this.state.skuilist.map((item,index)=>
-								<li key={index}><img src={item.productImg} alt=""/><p>{item.productTitle}</p><span>{item.sellPrice}</span> <span>{item.originalPrice}</span></li>
+								<li key={index} onClick={this.loaditem.bind(this,item.productId,item.parentProductId)}><img src={item.productImg} alt=""/><p>{item.productTitle}</p><span>{item.sellPrice}</span> <span>{item.originalPrice}</span></li>
 								)
 						}
 					</ul>
@@ -43,6 +43,12 @@ class Items extends Component {
 				:null}
 		</div>
 	}
+	loaditem(productId,parentProductId){
+		console.log('111')
+		console.log(productId,parentProductId)
+		window.location.href="/items/"+productId+"/"+parentProductId
+	}
+	
 	componentDidMount(){
 		this.props.changeHeaderTitle("商品详情")
 		axios.get(`/itemdetail/skuInfos/${this.props.match.params.productId}?_=1541037972963`).then((res)=>{
