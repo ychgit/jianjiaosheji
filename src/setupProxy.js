@@ -15,5 +15,10 @@ module.exports = function(app) {
     host:"m.wowdsgn.com",
     changeOrigin:true
    }));
+  app.use(proxy('/recommend', { 
+    target: 'https://m.wowdsgn.com',
+    host:"m.wowdsgn.com",
+    changeOrigin:true
+   }));
 
 };

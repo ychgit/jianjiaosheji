@@ -8,28 +8,37 @@ class Items extends Component {
 		super(props);
 		this.state={
 			attrlist:null,
-			detilist:null
+			detilist:null,
+			skuilist:null
 		}
 	}
 	render(){
 		return <div id="item">
 
-			{this.state.attrlist&&this.state.detilist? 
+			{this.state.attrlist&&this.state.detilist&&this.state.skuilist? 
 				<div>
-				<ul>
-					{
-						this.state.attrlist.map((item,index)=>
-							<li key={index}>{item.attributeName}{item.attributeValueText}</li>
+					<ul>
+						{
+							this.state.detilist.map((item,index)=>
+								<li key={index}><img src={item.content} alt=""/></li>
 							)
-					}
-				</ul>
-				<ul>
-					{
-						this.state.detilist.map((item,index)=>
-							<li key={index}><img src={item.content} alt=""/></li>
-						)
-					}
-				</ul>
+						}
+					</ul>
+					<ul>
+						{
+							this.state.attrlist.map((item,index)=>
+								<li key={index}>{item.attributeName}{item.attributeValueText}</li>
+								)
+						}
+					</ul>
+					<ul className="half">
+						{
+							this.state.skuilist.map((item,index)=>
+								<li key={index}><img src={item.productImg} alt=""/><p>{item.productTitle}</p><span>{item.sellPrice}</span> <span>{item.originalPrice}</span></li>
+								)
+						}
+					</ul>
+
 				</div>
 				:null}
 		</div>
@@ -42,16 +51,17 @@ class Items extends Component {
 				attrlist:res.data.data.skuAttrPairs
 			})
 		})
-			axios.get(`/itemdetail/spuInfos/${this.props.match.params.parentProductId}?_=1541140501634`).then((res)=>{
+		axios.get(`/itemdetail/spuInfos/${this.props.match.params.parentProductId}?_=1541140501634`).then((res)=>{
 			console.log(res.data)
 			this.setState({
 				detilist:res.data.data.itemDetailIntroVoList
-				
-
-			})
-			console.log(res.data.data.itemDetailIntroVoList)
-			
-		
+			})	
+		})
+		axios.get(`/recommend/item?skuId=${this.props.match.params.productId}&_=1541213957212`).then((res)=>{
+			console.log(res.data)
+			this.setState({
+				skuilist:res.data.data.skuInLists
+			})	
 		})
 		
 	
